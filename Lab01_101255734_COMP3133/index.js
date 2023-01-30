@@ -30,11 +30,11 @@ var csv = require('csv-parser');
 fs.createReadStream('input_countries.csv')
   .pipe(csv())
   .on('data', (data) => {
-    // /Filter data of Canada and write data to canada.txt?
+    //Filter data of Canada and write data to canada.txt
     if (data.country === 'Canada') {
       fs.appendFileSync('canada.txt', `${data.country},${data.year},${data.population}\n`);
     }
-    // c.	Filter data of United States and write data to usa.txt
+    //Filter data of United States and write data to usa.txt
     if (data.country === 'United States') {
       fs.appendFileSync('usa.txt', `${data.country},${data.year},${data.population}\n`);
     }
